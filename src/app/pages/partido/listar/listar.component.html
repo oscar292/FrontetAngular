@@ -1,0 +1,31 @@
+<h4 class="mb-3">Lista de candidatos</h4>
+<button type="button" class="btn btn-success" (click)="agregar()">
+  <i class="fas fa-plus"></i>
+</button>
+<table class="table">
+  <thead>
+    <tr>
+      <th *ngFor="let columna of nombresColumnas">{{columna}}
+      </th>
+    </tr>
+  </thead>
+  <tbody class="table-group-divider">
+    <ng-container *ngFor="let partidos of partido">
+      <tr>
+        <td>{{partidos.nombre}}</td>
+        <td>{{partidos.lema}}</td>
+
+        <td>
+          <br>
+          <button type="button" class="btn btn-primary" (click)="editar(partidos._id)">
+            <i class="fas fa-pencil-alt"></i>
+          </button>
+          <br>
+          <button type="button" class="btn btn-danger" (click)="eliminar(partidos._id)">
+            <i class="fas fa-solid fa-trash"></i>
+          </button>
+        </td>
+      </tr>
+    </ng-container>
+  </tbody>
+</table>
